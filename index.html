@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da forca</title>
+</head>
+<body id="corp">
+    <header>
+        <img src="img/icone.png" alt="forca" onclick="telaInicial()">
+    </header>
+    <main id="fundo">
+        <section>
+        <div id="areaDicas"></div>
+        <div class="imagem" id="forc"></div>
+        <div id="palavra"></div>
+        <div id="outras-letras"><textarea name="letra-erro" maxLength = "10" id="err-lt" cols="27" rows="1"></textarea></div>
+            <div class="teclado" >
+                <div class="alfabeto"><button id='A' class="botao-let" onclick="entradaLetras('A')">A</button></div>
+                <div class="alfabeto"><button id='B' class="botao-let" onclick="entradaLetras('B')">B</button></div>
+                <div class="alfabeto"><button id='C' class="botao-let" onclick="entradaLetras('C')">C</button></div>
+                <div class="alfabeto"><button id='D' class="botao-let" onclick="entradaLetras('D')">D</button></div>
+                <div class="alfabeto"><button id='E' class="botao-let" onclick="entradaLetras('E')">E</button></div>
+                <div class="alfabeto"><button id='F' class="botao-let" onclick="entradaLetras('F')">F</button></div>
+                <div class="alfabeto"><button id='G' class="botao-let" onclick="entradaLetras('G')">G</button></div>
+                <div class="alfabeto"><button id='H' class="botao-let" onclick="entradaLetras('H')">H</button></div>
+                <div class="alfabeto"><button id='I' class="botao-let" onclick="entradaLetras('I')">I</button></div>
+                <div class="alfabeto"><button id='J' class="botao-let" onclick="entradaLetras('J')">J</button></div>
+                <div class="alfabeto"><button id='K' class="botao-let" onclick="entradaLetras('K')">K</button></div>
+                <div class="alfabeto"><button id='L' class="botao-let" onclick="entradaLetras('L')">L</button></div>
+                <div class="alfabeto"><button id='M' class="botao-let" onclick="entradaLetras('M')">M</button></div>
+                <div class="alfabeto"><button id='N' class="botao-let" onclick="entradaLetras('N')">N</button></div>
+                <div class="alfabeto"><button id='O' class="botao-let" onclick="entradaLetras('O')">O</button></div>
+                <div class="alfabeto"><button id='P' class="botao-let" onclick="entradaLetras('P')">P</button></div>
+                <div class="alfabeto"><button id='Q' class="botao-let" onclick="entradaLetras('Q')">Q</button></div>
+                <div class="alfabeto"><button id='R' class="botao-let" onclick="entradaLetras('R')">R</button></div>
+                <div class="alfabeto"><button id='S' class="botao-let" onclick="entradaLetras('S')">S</button></div>
+                <div class="alfabeto"><button id='T' class="botao-let" onclick="entradaLetras('T')">T</button></div>
+                <div class="alfabeto"><button id='U' class="botao-let" onclick="entradaLetras('U')">U</button></div>
+                <div class="alfabeto"><button id='V' class="botao-let" onclick="entradaLetras('V')">V</button></div>
+                <div class="alfabeto"><button id='W' class="botao-let" onclick="entradaLetras('W')">W</button></div>
+                <div class="alfabeto"><button id='X' class="botao-let" onclick="entradaLetras('X')">X</button></div>
+                <div class="alfabeto"><button id='Y' class="botao-let" onclick="entradaLetras('Y')">Y</button></div>
+                <div class="alfabeto"><button id='Z' class="botao-let" onclick="entradaLetras('Z')">Z</button></div>
+                <div class="alfabeto"><button id='desitir' class="botao-let" onclick="desistir()">Desistir</button></div>    
+        </div>
+
+        <div class="conteudo" id="imag"><img src="img/icone.png" alt="Icone forca"></div>
+            
+        <div class="alfabeto"><button id='inic' class="botao-let" onclick="montaJogo()">Iniciar</button></div>
+        
+        <div class="alfabeto"><button id='adcPalavra' class="botao-let" onclick="adiciona()">Adicionar palavra</button></div>
+        
+        <div class="ganhou" id="gan">
+            <p>Parabéns vc conseguiu me salvar.</p>
+                <ul>
+                    <li><input type="submit" value="Jogar novamente" class="botao" id="iniciar4" onclick="montaJogo()"></a></li> 
+                </ul>
+        </div>
+        <div class="perdeu" id="per">
+            <p>Não foi dessa vez, mas tenho mais algumas vidas, tenta denovo.</p>
+                <ul>
+                    <li><input type="submit" value="Jogar novamente" class="botao" id="iniciar3" onclick="montaJogo()"></a></li>
+                    
+                </ul>
+
+        </div>
+        <div class="desistiu" id="des">
+            <p>Ja imaginava que você não se inportava comigo.</p>
+                <ul>
+                    <li><input type="submit" value="Jogar novamente" class="botao" id="iniciar1" onclick="montaJogo()"></a></li>
+                </ul>
+        </div>
+        <div class="adicionar" id="adc">
+            <p>Digite uma palavra e uma dica</p>
+            <textarea placeholder="Digite a palavra" name="adiciona-p" maxLength = "7" id="adiciona-p" cols="27" rows="1"></textarea>
+            <textarea placeholder="Digite a dica" name="adiciona-d" maxLength = "7" id="adiciona-d" cols="27" rows="1"></textarea>
+            <input type="submit" value="Adcionar e sortear" class="botao" id="adcPala" onclick="adicionarPalavra()">
+            <input type="submit" value="Iniciar jogo" class="botao" id="inicia" onclick="montaJogo()">
+        </div>
+        <div class="fechar" id="fec">
+            <p>ativa o CapsLock ai campeão</p>
+                <ul>
+                    <li><input type="submit" value="Fechar e continuar" class="botao" id="fecha" onclick="fechar()"></li>
+                </ul>
+        </div>
+        </section>
+    </main>
+    <footer>
+        <nav>
+            <ul class="contatos">
+                <li><a href="https://www.instagram.com/ivanfons"><img src="img/insta.png" alt="Logo Instagram"></a></li>
+                <li><a href="https://github.com/ivanfonss/"><img src="img/GitHub.png" alt="Logo GitHub"></a></li>
+                <li><a href="https://www.linkedin.com/in/ivan-fonseca-a930aa130/"><img src="img/Linke.png" alt="Logo LinkedIn"></a></li>
+            </ul>
+        </nav>
+        <p class="autor"> Desenvolvido por: Ivan Fonseca da Silva</p>
+    </footer>
+    <script src="js/jogoScript.js"></script>
+</body>
+</html>
