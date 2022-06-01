@@ -254,8 +254,7 @@ function montaJogo(){
 }
 
 function adicionarPalavra(){
-    let adP = adicionaP.split('');
-    let adD = adicionaD.split('');
+    
     if(adicionaP.value=='' ||adicionaD.value ==''){
         console.log("não aceita valor vazio")
         adicionaP.setAttribute('placeholder', 'Não pode estar vazio');
