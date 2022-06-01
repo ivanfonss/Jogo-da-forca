@@ -1,7 +1,7 @@
 
 
-const palavras=["ONIBUS","MONITOR","GRIFO","LIVRO"];
-const dicas=["Transporte","Video","Animal fantastico","Historia"];
+const palavras=["ONIBUS","MONITOR","GRIFO","LIVRO","FREEZER","SPRAY","GROSENHA","KIWI","LICHIA","HAMISTER","ALPACA","VALSA","JAZZ","JUIZ"];
+const dicas=["Transporte","Video","Animal fantastico","Historia","Objeto","Objeto","Fruta","Fruta","Fruta","Animal","Animal","Dança","Musica","Profissão"];
 const tecPres=[];
 
 //Campo teste
