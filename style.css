@@ -1,4 +1,8 @@
 
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+
 header img{
     width: 60px;
     cursor: pointer;
@@ -9,7 +13,7 @@ header img{
     
 }
 body{
-    
+    font-family: 'Roboto', sans-serif;
     margin: auto;
     width: 1024px;
     background-color: #2B2E4A; 
